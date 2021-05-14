@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1602838548/android.connectivity.iml" filepath="$PROJECT_DIR$/.idea/modules/-1602838548/android.connectivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1708544141/android.flutter_baidu_mapapi_base.iml" filepath="$PROJECT_DIR$/.idea/modules/1708544141/android.flutter_baidu_mapapi_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-312823372/android.flutter_baidu_mapapi_map.iml" filepath="$PROJECT_DIR$/.idea/modules/-312823372/android.flutter_baidu_mapapi_map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/536295076/android.flutter_baidu_mapapi_search.iml" filepath="$PROJECT_DIR$/.idea/modules/536295076/android.flutter_baidu_mapapi_search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2028131793/android.flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/-2028131793/android.flutter_plugin_android_lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1554785900/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-1554785900/android.shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1253066136/android.url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/-1253066136/android.url_launcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/933498903/android.video_player.iml" filepath="$PROJECT_DIR$/.idea/modules/933498903/android.video_player.iml" />
+    </modules>
+  </component>
+</project>
