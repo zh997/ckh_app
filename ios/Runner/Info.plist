@@ -5,7 +5,7 @@
     <key>io.flutter.embedded_views_preview</key>
     <string>YES</string>
     <key>CFBundleDisplayName</key>
-    <string>app名称</string>
+    <string>创客汇</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

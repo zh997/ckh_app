@@ -20,9 +20,9 @@ class ConcatUsPage extends StatefulWidget {
 class _ConcatUsPageState extends State<ConcatUsPage> {
   final ConcatUsLogic logic = Get.put(ConcatUsLogic());
   final ConcatUsState state = Get.find<ConcatUsLogic>().state;
-  BMFMapOptions mapOptions = BMFMapOptions(
-      zoomLevel: 12,
-      mapPadding: BMFEdgeInsets(left: 30, top: 0, right: 30, bottom: 0));
+  // BMFMapOptions mapOptions = BMFMapOptions(
+  //     zoomLevel: 12,
+  //     mapPadding: BMFEdgeInsets(left: 30, top: 0, right: 30, bottom: 0));
 
   @override
   void initState() {
@@ -31,49 +31,49 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
 
   }
 
-  void onBMFMapCreated(BMFMapController _bmfMapController)  {
-    _bmfMapController?.showUserLocation(true);
-    BMFCoordinate coordinate = BMFCoordinate(114.113625,22.601491);
-
-    BMFLocation location = BMFLocation(
-        coordinate: coordinate,
-        altitude: 0,
-        horizontalAccuracy: 5,
-        verticalAccuracy: -1.0,
-        speed: -1.0,
-        course: -1.0);
-
-    BMFUserLocation userLocation = BMFUserLocation(
-      location: location,
-    );
-
-    BMFUserLocationDisplayParam displayParam = BMFUserLocationDisplayParam(
-        locationViewOffsetX: 0,
-        locationViewOffsetY: 0,
-        accuracyCircleFillColor: Colors.red,
-        accuracyCircleStrokeColor: Colors.blue,
-        isAccuracyCircleShow: true,
-        // locationViewImage: 'resoures/animation_red.png',
-        locationViewHierarchy:
-        BMFLocationViewHierarchy.LOCATION_VIEW_HIERARCHY_BOTTOM);
-
-    _bmfMapController?.updateLocationData(userLocation);
-    _bmfMapController?.updateLocationViewWithParam(displayParam);
-
-    // // 构造检索参数
-    // BMFPoiCitySearchOption poiCitySearchOption =
-    // BMFPoiCitySearchOption(city: '深圳', keyword: '深圳市龙岗区布吉西环路德福广场B座二楼');
-    // // 检索实例
-    // BMFPoiCitySearch poiCitySearch = BMFPoiCitySearch();
-    // // 检索回调
-    // poiCitySearch.onGetPoiCitySearchResult(callback: (BMFPoiSearchResult result, BMFSearchErrorCode errorCode) {
-    //   print('poi城市检索回调 errorCode = ${errorCode}  \n result = ${result?.toMap()}');
-    //   // 解析reslut，具体参考demo
-    // });
-    // // 发起检索
-    // bool flag = await poiCitySearch.poiCitySearch(poiCitySearchOption);
-    // _bmfMapController.getShowMapPoi();
-  }
+  // void onBMFMapCreated(BMFMapController _bmfMapController)  {
+  //   _bmfMapController?.showUserLocation(true);
+  //   BMFCoordinate coordinate = BMFCoordinate(114.113625,22.601491);
+  //
+  //   BMFLocation location = BMFLocation(
+  //       coordinate: coordinate,
+  //       altitude: 0,
+  //       horizontalAccuracy: 5,
+  //       verticalAccuracy: -1.0,
+  //       speed: -1.0,
+  //       course: -1.0);
+  //
+  //   BMFUserLocation userLocation = BMFUserLocation(
+  //     location: location,
+  //   );
+  //
+  //   BMFUserLocationDisplayParam displayParam = BMFUserLocationDisplayParam(
+  //       locationViewOffsetX: 0,
+  //       locationViewOffsetY: 0,
+  //       accuracyCircleFillColor: Colors.red,
+  //       accuracyCircleStrokeColor: Colors.blue,
+  //       isAccuracyCircleShow: true,
+  //       // locationViewImage: 'resoures/animation_red.png',
+  //       locationViewHierarchy:
+  //       BMFLocationViewHierarchy.LOCATION_VIEW_HIERARCHY_BOTTOM);
+  //
+  //   _bmfMapController?.updateLocationData(userLocation);
+  //   _bmfMapController?.updateLocationViewWithParam(displayParam);
+  //
+  //   // // 构造检索参数
+  //   // BMFPoiCitySearchOption poiCitySearchOption =
+  //   // BMFPoiCitySearchOption(city: '深圳', keyword: '深圳市龙岗区布吉西环路德福广场B座二楼');
+  //   // // 检索实例
+  //   // BMFPoiCitySearch poiCitySearch = BMFPoiCitySearch();
+  //   // // 检索回调
+  //   // poiCitySearch.onGetPoiCitySearchResult(callback: (BMFPoiSearchResult result, BMFSearchErrorCode errorCode) {
+  //   //   print('poi城市检索回调 errorCode = ${errorCode}  \n result = ${result?.toMap()}');
+  //   //   // 解析reslut，具体参考demo
+  //   // });
+  //   // // 发起检索
+  //   // bool flag = await poiCitySearch.poiCitySearch(poiCitySearchOption);
+  //   // _bmfMapController.getShowMapPoi();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -158,7 +158,7 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                           borderRadius: BorderRadius.circular( ScreenUtil().setWidth(116)),
                           border: Border.all(color: AppColors.COLOR_C8CFE0)
                       ),
-                      child: Image.asset(AppImages.CONCAT_US_EMAIL, fit: BoxFit.fitWidth, width: ScreenUtil().setWidth(80),height: ScreenUtil().setWidth(80)),
+                      child: Image.asset(AppImages.CONCAT_US_ADDRESS, fit: BoxFit.fitWidth, width: ScreenUtil().setWidth(80),height: ScreenUtil().setWidth(80)),
                     ),
                     SizedBox(width: 10,),
                     Column(
@@ -172,16 +172,16 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                   ],
                 ),
                 SizedBox(height: 15,),
-                Container(
-                  height: ScreenUtil().setWidth(400),
-                  child: BMFMapWidget(
-                    onBMFMapCreated: (controller) {
-                      onBMFMapCreated(controller);
-                    },
-                    mapOptions: mapOptions,
-                  ),
-                ),
-                SizedBox(height: 15,),
+                // Container(
+                //   height: ScreenUtil().setWidth(400),
+                //   child: BMFMapWidget(
+                //     onBMFMapCreated: (controller) {
+                //       onBMFMapCreated(controller);
+                //     },
+                //     mapOptions: mapOptions,
+                //   ),
+                // ),
+                // SizedBox(height: 15,),
               ],
             ),
           ),

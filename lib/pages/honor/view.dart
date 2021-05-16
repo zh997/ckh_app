@@ -1,5 +1,6 @@
 import 'package:ckh_app/constant/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screen_util.dart';
 import 'package:get/get.dart';
 import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
@@ -33,13 +34,17 @@ class HonorPage extends StatelessWidget {
             SliverToBoxAdapter(child: SizedBox(height: 10,),),
             SliverGrid(delegate: SliverChildBuilderDelegate((BuildContext context, int index){
               return Container(
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  color: Colors.white,
+                ),
                 alignment: Alignment.center,
-                padding: index % 2 > 0 ? EdgeInsets.only(right: 20, top: 0, left: 20) : EdgeInsets.only(left: 20, top: 0),
+                padding: EdgeInsets.all(10),
+                margin: index % 2 > 0 ? EdgeInsets.only(right: 10) : EdgeInsets.only(left: 10),
                 child: Column(
                   children: [
                     Container(
-                      height: 180,
+                      height: ScreenUtil().setWidth(300),
                       child:  Image.asset(honorList[index].url, fit: BoxFit.fitWidth,),
                     ),
                     SizedBox(height: 10,),
@@ -48,8 +53,10 @@ class HonorPage extends StatelessWidget {
                 ),
               );
             }, childCount: honorList.length), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 200/230,
-              crossAxisCount: 2
+              childAspectRatio: ScreenUtil().setWidth(335)/ScreenUtil().setWidth(400),
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10
             )),
             SliverToBoxAdapter(child: SizedBox(height: 10,),),
           ],

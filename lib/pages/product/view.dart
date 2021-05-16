@@ -51,7 +51,7 @@ class ProductPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        height: 190,
+                        height: ScreenUtil().setWidth(350),
                         child: Image.asset(AppImages.PRODUCT_IMG_1, fit: BoxFit.cover),
                       ),
                       Container(
@@ -90,7 +90,7 @@ class ProductPage extends StatelessWidget {
                   ),
                 );
               },childCount: 10), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 200/285,
+                childAspectRatio: ScreenUtil().setWidth(335)/ScreenUtil().setWidth(520),
                 crossAxisCount: 2,
                 mainAxisSpacing: ScreenUtil().setWidth(20),
                 crossAxisSpacing:  ScreenUtil().setWidth(20),
