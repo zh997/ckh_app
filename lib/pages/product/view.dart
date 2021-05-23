@@ -90,7 +90,7 @@ class ProductPage extends StatelessWidget {
                   ),
                 );
               },childCount: 10), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: ScreenUtil().setWidth(335)/ScreenUtil().setWidth(520),
+                childAspectRatio: ScreenUtil().setWidth(335)/ScreenUtil().setWidth(510),
                 crossAxisCount: 2,
                 mainAxisSpacing: ScreenUtil().setWidth(20),
                 crossAxisSpacing:  ScreenUtil().setWidth(20),

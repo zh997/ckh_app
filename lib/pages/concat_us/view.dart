@@ -97,8 +97,12 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
             color: Colors.white,
             child: Column(
               children: [
-                Text('	708090创客汇为驻场创客提供一站式的创业服务，通过为创业团队提供办公场地、会议空间、投资融资服务、营销推广、人力资源、法务财务、行政管理、媒体传播等服务。现时本公司在未来项目将计划营运长租公寓。',
-                    style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28)),
+                Text('708090创客汇为驻场创客提供一站式的创业服务，通过为创业团队提供办公场地、会议空间、投资融资服务、营销推广、人力资源、法务财务、行政管理、媒体传播等服务。现时本公司在未来项目将计划营运长租公寓。',
+                    style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),strutStyle: StrutStyle(
+                      fontFamily: 'Roboto',
+                      height: 1.2,
+                      leading: 0.5,
+                    )),
                 SizedBox(height: 15,),
                 Row(
                   children: [
@@ -110,7 +114,7 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                           borderRadius: BorderRadius.circular( ScreenUtil().setWidth(116)),
                           border: Border.all(color: AppColors.COLOR_C8CFE0)
                       ),
-                      child: Image.asset(AppImages.CONCAT_US_PHONE, width: ScreenUtil().setWidth(80),height: ScreenUtil().setWidth(80),),
+                      child: Image.asset(AppImages.CONCAT_US_PHONE, width: ScreenUtil().setWidth(60),height: ScreenUtil().setWidth(60),),
                     ),
                     SizedBox(width: 10,),
                     Column(
@@ -134,7 +138,7 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                           borderRadius: BorderRadius.circular( ScreenUtil().setWidth(116)),
                           border: Border.all(color: AppColors.COLOR_C8CFE0)
                       ),
-                      child: Image.asset(AppImages.CONCAT_US_EMAIL,width: ScreenUtil().setWidth(80),height: ScreenUtil().setWidth(80)),
+                      child: Image.asset(AppImages.CONCAT_US_EMAIL,width: ScreenUtil().setWidth(60),height: ScreenUtil().setWidth(60)),
                     ),
                     SizedBox(width: 10,),
                     Column(
@@ -158,7 +162,7 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                           borderRadius: BorderRadius.circular( ScreenUtil().setWidth(116)),
                           border: Border.all(color: AppColors.COLOR_C8CFE0)
                       ),
-                      child: Image.asset(AppImages.CONCAT_US_ADDRESS, fit: BoxFit.fitWidth, width: ScreenUtil().setWidth(80),height: ScreenUtil().setWidth(80)),
+                      child: Image.asset(AppImages.CONCAT_US_ADDRESS, fit: BoxFit.fitWidth, width: ScreenUtil().setWidth(60),height: ScreenUtil().setWidth(60)),
                     ),
                     SizedBox(width: 10,),
                     Column(

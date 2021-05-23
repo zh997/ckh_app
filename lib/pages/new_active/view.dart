@@ -38,24 +38,31 @@ class NewActivePage extends StatelessWidget {
                         child: Row(
                           children: [
                             Container(
-                              width: ScreenUtil().setWidth(170),
-                              height: ScreenUtil().setWidth(170),
+                              width: ScreenUtil().setWidth(200),
+                              height: ScreenUtil().setWidth(200),
                               child: Image.asset(activeList[index].url, fit: BoxFit.cover,),
                             ),
                             SizedBox(width: 10,),
-                            Expanded(child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(activeList[index].title, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_32, fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
-                                Text(activeList[index].subtitle, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_32,), maxLines: 2, overflow: TextOverflow.ellipsis,),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(activeList[index].time, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_32,), maxLines: 2, overflow: TextOverflow.ellipsis,),
-                                  ],
-                                )
-                              ],
+                            Expanded(child: Container(
+                              height: ScreenUtil().setWidth(200),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(activeList[index].title, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_32, fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
+                                  Text(activeList[index].subtitle, style: TextStyle(color: AppColors.COLOR_646D7F, fontSize: AppFont.SIZE_32,), maxLines: 2, overflow: TextOverflow.ellipsis,strutStyle: StrutStyle(
+                                    fontFamily: 'Roboto',
+                                    height: 0.5,
+                                    leading: 0.5,
+                                  )),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(activeList[index].time, style: TextStyle(color: AppColors.COLOR_B1B8C7, fontSize: AppFont.SIZE_32,), maxLines: 2, overflow: TextOverflow.ellipsis,),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ))
                           ],
                         )
