@@ -40,6 +40,10 @@ dependencies:
   flutter_baidu_mapapi_map: ^2.0.1
   flutter_baidu_mapapi_search: ^2.0.1
   url_launcher: ^6.0.3
+  image_gallery_saver: ^1.6.9
+  cached_network_image: ^3.0.0
+  permission_handler: ^8.0.0+1
+  flutter_pickers: ^2.1.1
 
 dev_dependencies:
   flutter_test:

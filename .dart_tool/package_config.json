@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "archive",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/archive-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "async",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/async-2.5.0",
       "packageUri": "lib/",
@@ -10,6 +16,12 @@
     {
       "name": "boolean_selector",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "cached_network_image",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/cached_network_image-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -58,6 +70,12 @@
     {
       "name": "connectivity_platform_interface",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/connectivity_platform_interface-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/crypto-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -122,6 +140,18 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "flutter_blurhash",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_blurhash-0.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_cache_manager",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_cache_manager-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_easyloading",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyloading-3.0.0",
       "packageUri": "lib/",
@@ -132,6 +162,12 @@
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_page_indicator-0.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "flutter_pickers",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_pickers-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_plugin_android_lifecycle",
@@ -176,8 +212,26 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "http",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/http-0.13.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http_parser",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/http_parser-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/image-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image_gallery_saver",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/image_gallery_saver-1.6.9",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -200,14 +254,32 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "octo_image",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/octo_image-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/path-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path_provider_linux",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider_macos",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_macos-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -220,6 +292,30 @@
     {
       "name": "path_provider_windows",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.11.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "permission_handler",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-8.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_platform_interface-3.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/petitparser-4.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -238,6 +334,12 @@
     {
       "name": "process",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/process-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.27.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -290,6 +392,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "sqflite",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/sqflite-2.0.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/sqflite_common-2.0.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "stack_trace",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/stack_trace-1.10.0",
       "packageUri": "lib/",
@@ -304,6 +418,12 @@
     {
       "name": "string_scanner",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/string_scanner-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/synchronized-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -368,6 +488,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/uuid-3.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.0",
       "packageUri": "lib/",
@@ -404,13 +530,19 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/ZC/Downloads/flutter/.pub-cache/hosted/pub.flutter-io.cn/xml-5.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "ckh_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-23T13:37:01.095037Z",
+  "generated": "2021-05-23T14:54:50.076662Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

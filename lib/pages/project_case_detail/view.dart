@@ -52,27 +52,45 @@ class ProjectCaseDetailPage extends StatelessWidget {
                   height: ScreenUtil().setWidth(400),
                   child: Image.asset(AppImages.PROJECT_CASE_1, fit: BoxFit.cover),
                 ),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(child: Container(
+                      height: 1,
+                      color: AppColors.COLOR_GRAY_F6F6F6,
+                    )),
+                    SizedBox(width: 10,),
+                    Text('分享至', style: TextStyle(color: AppColors.COLOR_BLACK_333333, fontSize: AppFont.SIZE_28)),
+                    SizedBox(width: 10,),
+                    Expanded(child: Container(
+                      height: 1,
+                      color: AppColors.COLOR_GRAY_F6F6F6,
+                    )) ,
+                  ],
+                ),
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(AppImages.WEICHAT_ICON, width: ScreenUtil().setWidth(70), height: ScreenUtil().setWidth(70),),
+                    Image.asset(AppImages.CHROME_ICON, width: ScreenUtil().setWidth(70), height: ScreenUtil().setWidth(70),),
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: (){
+
+                      },
+                      child: Image.asset(AppImages.QQ_ICON, width: ScreenUtil().setWidth(60), height: ScreenUtil().setWidth(60),),
+                    ),
+                    Image.asset(AppImages.QUNE_ICON, width: ScreenUtil().setWidth(70), height: ScreenUtil().setWidth(70),),
+                    Image.asset(AppImages.WEIBO_ICON, width: ScreenUtil().setWidth(70), height: ScreenUtil().setWidth(70),),
+                    Image.asset(AppImages.LINK_ICON, width: ScreenUtil().setWidth(60), height: ScreenUtil().setWidth(60),),
+                  ],
+                )
               ],
             ),
           ),
-          Padding(padding: EdgeInsets.all(15), child: Row(
-            children: [
-              Container(
-                width: ScreenUtil().setWidth(180),
-                height: ScreenUtil().setWidth(66),
-                alignment: Alignment.center,
-                color: AppColors.COLOR_FF7F25,
-                child: Text('上一篇', style: TextStyle(color: Colors.white, fontSize: AppFont.SIZE_28)),
-              ),
-              Container(
-                width: ScreenUtil().setWidth(180),
-                height: ScreenUtil().setWidth(66),
-                alignment: Alignment.center,
-                color: AppColors.COLOR_31C27A,
-                child: Text('下一篇', style: TextStyle(color: Colors.white, fontSize: AppFont.SIZE_28)),
-              )
-            ],
-          ),)
+
 
         ],
       ),

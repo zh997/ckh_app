@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:ckh_app/constant/app_images.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'logic.dart';
 import 'state.dart';
@@ -59,9 +60,10 @@ class IntroductionPage extends StatelessWidget {
                         leading: 0.5,
                       ),),
                       SizedBox(height: 20,),
-                      Container(
-                        child: Image.asset(AppImages.COMPANY_IMG_1, width: ScreenUtil().setWidth(690), height: ScreenUtil().setWidth(388)),
-                      ),
+                      // Container(
+                      //   child: Image.asset(AppImages.COMPANY_IMG_1, width: ScreenUtil().setWidth(690), height: ScreenUtil().setWidth(388)),
+                      // ),
+                      _Swiper(),
                       SizedBox(height: 20,),
                       Text('708090创客汇自创办以来，先后获各界政府授予「创新创业孵化基地」、「青年文明号」、「龙岗区创新创业先锋团队」、「十大深港交流合作创业空间」等光荣称号。其举办的6期「创新创业青春学堂」参与人次超过2000人，成功孕育多个项目落地，为两地青年创造商机。', style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),strutStyle: StrutStyle(
                         fontFamily: 'Roboto',
@@ -122,6 +124,48 @@ class IntroductionPage extends StatelessWidget {
             )
           ],
         )
+    );
+  }
+
+  Widget _Swiper() {
+    return Container(
+      width: ScreenUtil().setWidth(690),
+      height: ScreenUtil().setWidth(388),
+      child: Swiper(
+          key: UniqueKey(),
+          duration: 1000,
+          itemCount: state.BannerList.value.length,
+          autoplay: true,
+          pagination: SwiperPagination(
+              builder: SwiperCustomPagination(builder: (BuildContext context, SwiperPluginConfig swiperPluginConfig) {
+                double opacity (int index) {
+                  if ( swiperPluginConfig.activeIndex == index) {
+                    return 1.0;
+                  } else {
+                    return 0.3;
+                  }
+                }
+                return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(state.BannerList.value.length, (index) => Opacity(
+                        opacity: opacity(index),
+                        child: Container(
+                          margin: EdgeInsets.only(left: 2, right: 2),
+                          width: ScreenUtil().setWidth(15),
+                          height: ScreenUtil().setWidth(15),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(ScreenUtil().setWidth(15)),
+                              color: swiperPluginConfig.activeIndex == index ? AppColors.COLOR_31C27A :Colors.white
+                          ),
+                        )),
+                    )
+                );
+              })
+          ),
+          itemBuilder: (BuildContext context,int index) => Image.asset(
+              state.BannerList.value[index].url, fit: BoxFit.cover
+          )
+      ),
     );
   }
 }
