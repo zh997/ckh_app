@@ -1,4 +1,6 @@
+import 'package:ckh_app/constant/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screen_util.dart';
 import 'package:get/get.dart';
 import 'package:ckh_app/common/routes.dart';
 import 'package:ckh_app/constant/app_colors.dart';
@@ -41,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
             key: GlobalKey(),
             name: 'account',
             controller: TextEditingController(),
-            icon: Icon(Icons.account_circle_outlined, color: AppColors.COLOR_B1B8C7, size: 25),
+            icon: Image.asset(AppImages.LOGIN_ICON_5, width: ScreenUtil().setWidth(50), height: ScreenUtil().setWidth(50)),
             labelText: '请输入账号',
             labelLeft: 40,
           ),
@@ -50,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
             key: GlobalKey(),
             name: 'password',
             controller: TextEditingController(),
-            icon: Icon(Icons.work_outline_rounded, color: AppColors.COLOR_B1B8C7, size: 25),
+            icon: Image.asset(AppImages.LOGIN_ICON_1, width: ScreenUtil().setWidth(50), height: ScreenUtil().setWidth(50)),
             labelText: '请输入密码',
             obscureText: true,
             labelLeft: 40,
@@ -58,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
             key: GlobalKey(),
             name: 'password',
             controller: TextEditingController(),
-            icon: Icon(Icons.work_outline_rounded, color: AppColors.COLOR_B1B8C7, size: 25),
+            icon: Image.asset(AppImages.LOGIN_ICON_4, width: ScreenUtil().setWidth(50), height: ScreenUtil().setWidth(50)),
             labelText: '请输入验证码',
             obscureText: true,
             labelLeft: 40,

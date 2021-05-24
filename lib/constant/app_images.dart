@@ -46,5 +46,17 @@ class AppImages {
   static String CONCAT_US_EMAIL = 'static/images/email@3x.png';
   static String CONCAT_US_PHONE = 'static/images/phone@3x.png';
   static String MAP_IMG = 'static/images/map_img.png';
+  static String LOGIN_ICON_1 = 'static/images/login_icon_1@3x.png';
+  static String LOGIN_ICON_2 = 'static/images/login_icon_2@3x.png';
+  static String LOGIN_ICON_3 = 'static/images/login_icon_3@3x.png';
+  static String LOGIN_ICON_4 = 'static/images/login_icon_4@3x.png';
+  static String LOGIN_ICON_5 = 'static/images/login_icon_5@3x.png';
+
+  static String LINK_ICON = 'static/images/link_icon.png';
+  static String CHROME_ICON = 'static/images/chrome_icon.png';
+  static String WEIBO_ICON = 'static/images/weibo_icon.png';
+  static String WEICHAT_ICON = 'static/images/wechat_icon.png';
+  static String QQ_ICON = 'static/images/qq_icon.png';
+  static String QUNE_ICON = 'static/images/qune_icon.png';
 
 }

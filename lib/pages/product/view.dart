@@ -1,3 +1,4 @@
+import 'package:ckh_app/common/utils.dart';
 import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:ckh_app/constant/app_images.dart';
@@ -90,7 +91,7 @@ class ProductPage extends StatelessWidget {
                   ),
                 );
               },childCount: 10), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: ScreenUtil().setWidth(335)/ScreenUtil().setWidth(520),
+                childAspectRatio: ScreenUtil().setWidth(335)/ScreenUtil().setWidth(510),
                 crossAxisCount: 2,
                 mainAxisSpacing: ScreenUtil().setWidth(20),
                 crossAxisSpacing:  ScreenUtil().setWidth(20),
@@ -127,7 +128,13 @@ class ProductPage extends StatelessWidget {
                   children: [
                     Text('小程序扫码购买', style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_36, fontWeight: FontWeight.bold)),
                     SizedBox(height: 10,),
-                    Image.asset(AppImages.PAY_QRCODE, width: ScreenUtil().setWidth(360), height: ScreenUtil().setWidth(360),),
+                    GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onLongPress: (){
+                        Utils.saveImage(AppImages.PAY_QRCODE, isAsset: true);
+                      },
+                      child: Image.asset(AppImages.PAY_QRCODE, width: ScreenUtil().setWidth(360), height: ScreenUtil().setWidth(360),),
+                    ),
                     SizedBox(height: 10,),
                     Text('长按保存至相册', style: TextStyle(color: AppColors.COLOR_646D7F, fontSize: AppFont.SIZE_28))
                   ],
