@@ -3,6 +3,7 @@ import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:ckh_app/widgets/app_buttons.dart';
 import 'package:ckh_app/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/screen_util.dart';
 import 'package:get/get.dart';
 
@@ -99,7 +100,9 @@ class HumenResourcePage extends StatelessWidget {
           SizedBox(height: 30,),
           Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: PrimaryButton('提交', radius: ScreenUtil().setWidth(98),),
+            child: PrimaryButton('提交', radius: ScreenUtil().setWidth(98),onTap: (){
+              EasyLoading.showSuccess('提交成功');
+            },),
           )
         ],
       )

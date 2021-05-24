@@ -45,5 +45,6 @@ class AppImages {
   static String CONCAT_US_ADDRESS = 'static/images/address@3x.png';
   static String CONCAT_US_EMAIL = 'static/images/email@3x.png';
   static String CONCAT_US_PHONE = 'static/images/phone@3x.png';
+  static String MAP_IMG = 'static/images/map_img.png';
 
 }

@@ -172,6 +172,11 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                   ],
                 ),
                 SizedBox(height: 15,),
+                Container(
+                  height: ScreenUtil().setWidth(400),
+                  child: Image.asset(AppImages.MAP_IMG, fit: BoxFit.cover),
+                ),
+                SizedBox(height: 15,),
                 // Container(
                 //   height: ScreenUtil().setWidth(400),
                 //   child: BMFMapWidget(
