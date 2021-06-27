@@ -1,9 +1,10 @@
 
 import 'package:ckh_app/common/routes.dart';
+import 'package:ckh_app/models/home_index.dart';
 import 'package:get/get.dart';
 
 class HomeState {
-  RxList<SwiperItemModel> BannerList;
+  Rx<HomeIndexModel> homeIndexData = HomeIndexModel().obs;
   RxList<IconItem> iconList = [
     IconItem(url: 'static/images/home_entry_icon_2@3x.png', text: '公司介绍', route: RouteConfig.introduction_page),
     IconItem(url: 'static/images/home_entry_icon_9@3x.png', text: '最新活动'),
@@ -15,22 +16,6 @@ class HomeState {
     IconItem(url: 'static/images/home_entry_icon_4@3x.png', text: '人力资源', route: RouteConfig.humen_resource),
     IconItem(url: 'static/images/home_entry_icon_5@3x.png', text: '联系我们', route: RouteConfig.concat_us),
   ].obs;
-  HomeState() {
-    ///Initialize variables
-    BannerList = [
-      SwiperItemModel({'url': 'static/images/banner1@3x.png', 'color': '#000000'}),
-      SwiperItemModel({'url': 'static/images/banner2@3x.png', 'color': '#000000'}),
-      SwiperItemModel({'url': 'static/images/banner3@3x.png', 'color': '#FFC1C1'})
-    ].obs;
-  }
-}
-class SwiperItemModel {
-  String url;
-  String color;
-  SwiperItemModel(Map<String, dynamic> json) {
-    this.url = json['url'];
-    this.color = json['color'];
-  }
 }
 
 class IconItem {

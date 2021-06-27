@@ -1,3 +1,4 @@
+import 'package:ckh_app/constant/app_images.dart';
 import 'package:ckh_app/pages/new_active/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screen_util.dart';
@@ -16,15 +17,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final MainLogic logic = Get.put(MainLogic());
   final MainState state = Get.find<MainLogic>().state;
-  PageController pageController;
-
-  @override
-  void initState() {
-    // TODO: implement setState
-    print(state.current.value);
-    pageController = PageController(initialPage: state.current.value);
-    super.initState();
-  }
+  PageController pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +30,37 @@ class _MainPageState extends State<MainPage> {
             NewActivePage(),
           ],
         ),
-        bottomNavigationBar: Obx(() => _BottomAppBar(state.TabBarList, state.current.value, logic, pageController))
+        bottomNavigationBar: Obx((){
+          final int current = state.current.value;
+          return BottomNavigationBar(
+            selectedItemColor: AppColors.COLOR_31C27A,
+            unselectedItemColor:  AppColors.COLOR_2C3340,
+            selectedFontSize: 12.0,
+            items:[
+              BottomNavigationBarItem(
+                label: '首页',
+                icon: _bottomNavigationBarIcon(AppImages.nvbar_home),
+                activeIcon: _bottomNavigationBarIcon(AppImages.nvbar_home_selected),
+              ),
+              BottomNavigationBarItem(
+                label: '活动',
+                icon: _bottomNavigationBarIcon(AppImages.nvbar_active),
+                activeIcon: _bottomNavigationBarIcon(AppImages.nvbar_active_selected),
+              )
+            ] ,currentIndex: current, onTap: (index) {
+              logic.onChangeTabBar(index);
+              pageController.jumpToPage(index);
+          },);
+        })
     );
+  }
+
+  Image _bottomNavigationBarIcon(String imgUrl) {
+      return Image.asset(
+        imgUrl,
+        width: ScreenUtil().setWidth(44),
+        height: ScreenUtil().setWidth(44),
+      );
   }
 
   @override
@@ -46,29 +68,5 @@ class _MainPageState extends State<MainPage> {
     // TODO: implement dispose
     pageController.dispose();
     super.dispose();
-  }
-}
-
-class _BottomAppBar extends StatelessWidget{
-  final List<TabbarItem> list;
-  final int current;
-  final MainLogic logic;
-  final PageController pageController;
-  _BottomAppBar(this.list, this.current, this.logic, this.pageController);
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return BottomNavigationBar(
-        selectedItemColor: AppColors.COLOR_31C27A,
-        unselectedItemColor:  AppColors.COLOR_2C3340,
-        selectedFontSize: 12.0,
-      items:  List.generate(list.length, (index) => BottomNavigationBarItem(
-        icon: current == index ? Image.asset(list[index].selected_icon, width: ScreenUtil().setWidth(44),height:  ScreenUtil().setWidth(44)) :
-        Image.asset(list[index].icon, width: ScreenUtil().setWidth(44),height:  ScreenUtil().setWidth(44)),
-        title: Padding(padding: EdgeInsets.only(top: 3),child: Text(list[index].text),)
-    )),currentIndex: current, onTap: (index) {
-      logic.onChangeTabBar(index);
-      pageController.jumpToPage(index);
-    },);
   }
 }

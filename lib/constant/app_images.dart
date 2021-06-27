@@ -1,4 +1,8 @@
 class AppImages {
+  static String nvbar_home = 'static/images/tabbar_home_selected_icon.jpg';
+  static String nvbar_home_selected = 'static/images/tabbar_home_icon@3x.png';
+  static String nvbar_active = 'static/images/tabbar_active_icon@3x.png';
+  static String nvbar_active_selected = 'static/images/tabbar_active_selected_icon@3x.png';
   static String ICON_1 = 'static/images/icon_1@3x.png';
   static String OPEN_IMG = 'static/images/open_img.png';
   static String SEARCH_ICON = 'static/images/search_icon.png';

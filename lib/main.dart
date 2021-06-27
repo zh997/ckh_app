@@ -9,13 +9,13 @@ import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart';
 
 import 'common/storage.dart';
 void main() {
-  if(Platform.isIOS){
-    BMFMapSDK.setApiKeyAndCoordType(
-        'c2QnQTSKYmEISdMy06G7WhVnlFe7B9hv', BMF_COORD_TYPE.BD09LL);
-  }else if(Platform.isAndroid){
-// Android 目前不支持接口设置Apikey,
-// 请在主工程的Manifest文件里设置，详细配置方法请参考[https://lbsyun.baidu.com/ 官网][https://lbsyun.baidu.com/)demo
-    BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);}
+//   if(Platform.isIOS){
+//     BMFMapSDK.setApiKeyAndCoordType(
+//         'c2QnQTSKYmEISdMy06G7WhVnlFe7B9hv', BMF_COORD_TYPE.BD09LL);
+//   }else if(Platform.isAndroid){
+// // Android 目前不支持接口设置Apikey,
+// // 请在主工程的Manifest文件里设置，详细配置方法请参考[https://lbsyun.baidu.com/ 官网][https://lbsyun.baidu.com/)demo
+//     BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);}
   runApp(MyApp());
 }
 
@@ -26,12 +26,11 @@ class MyApp extends StatelessWidget {
     return FutureBuilder(future: AppStorage.getInstance(), builder: (BuildContext context, AsyncSnapshot snapshot){
       if (snapshot.connectionState == ConnectionState.done) {
         final bool isFirstOpen = !(AppStorage.getBool('isFirstOpen') == true);
-        print(isFirstOpen);
         return ScreenUtilInit(
           designSize: Size(750, 1334),
           allowFontScaling: true,
           builder: () => GetMaterialApp(
-            title: 'ckh app',
+            title: '创客汇',
             builder: (context, child){
               return EasyLoading.init()(context, Scaffold(
                 // Global GestureDetector that will dismiss the keyboard

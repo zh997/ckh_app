@@ -1,22 +1,33 @@
+import 'dart:convert';
+import 'dart:io';
+import 'package:ckh_app/constant/app_api_urls.dart';
+import 'package:ckh_app/http/response_data.dart';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:connectivity/connectivity.dart';
+import 'package:ckh_app/common/routes.dart';
+import 'package:ckh_app/common/storage.dart';
+import 'package:ckh_app/common/utils.dart';
 import 'package:ckh_app/constant/app_api_urls.dart';
 import 'package:ckh_app/http/response_data.dart';
 import 'package:ckh_app/http/status_code.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart' as navigator;
+import 'package:flutter/foundation.dart';
+import 'package:connectivity/connectivity.dart';
+
+
 
 class HttpRequest{
 
   static String baseUrl = AppApiUrls.BASE_URL;
 
   static BaseOptions options = new BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: 15000,
-      receiveTimeout: 3000,
+    baseUrl: baseUrl,
+    connectTimeout: 15000,
+    receiveTimeout: 3000,
   );
 
-  static Future<ResponseData> request(url, params, String method) async {
+  static Future<DioResponseData> request(url, params, String method) async {
 
     Response response;
     Response errorResponse;
@@ -29,15 +40,38 @@ class HttpRequest{
       // I am connected to a wifi network.
     } else if (connectivityResult == ConnectivityResult.none) {
       // no network
-      EasyLoading.showError('请检查网络');
-      return ResponseData(StatusCode.NETWORK_ERROR, '' , false, '请检查网络');
+      EasyLoading.dismiss();
+      Utils.toast('请检查网络');
+      return DioResponseData(StatusCode.NETWORK_ERROR, '' , false, '请检查网络');
     }
 
     options.method = method;
+    // options.headers['token'] = '81db4474cdaf61cb99855b309354b683';
+    addHeaders('token', AppStorage.getString('token'));
     Dio dio = new Dio(options);
+    if (!Utils.inProduction) {
+      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+        client.badCertificateCallback =
+            (X509Certificate cert, String host, int port) {
+          return Platform.isAndroid;
+        };
+        client.findProxy = (url) {
+          ///设置代理 电脑ip地址
+          return "PROXY 192.168.0.101:8866";
+
+          ///不设置代理
+//          return 'DIRECT';
+        };
+
+      };
+    }
 
     try {
-       response = await dio.request(url,data: params);
+      if (method == 'POST') {
+        response = await dio.request(url,data: params);
+      } else if(method == 'GET') {
+        response = await dio.request(url, queryParameters: params);
+      }
     } on DioError catch(e) {
       if (e.response != null) {
         errorResponse = e.response;
@@ -49,14 +83,34 @@ class HttpRequest{
       }
       if (kDebugMode) {
         print('请求异常: ' + e.toString());
-        print('请求异常 url: ' + url);
+        print('请求异常 url: ' + baseUrl + url);
       }
-      EasyLoading.showError(errorResponse.statusMessage);
-      return ResponseData(errorResponse.statusCode, '' , false, errorResponse.statusMessage);
+      Utils.toast(errorResponse.statusMessage);
+      EasyLoading.dismiss();
+      return DioResponseData(errorResponse.statusCode, '' , false, errorResponse.statusMessage);
     }
 
     if (response.statusCode == 200 || response.statusCode == 201) {
-      return ResponseData(response.statusCode, response.data , true, response.statusMessage);
+      return DioResponseData(response.statusCode, response.data , true, response.statusMessage);
+    }
+  }
+
+  static addHeaders(String key, dynamic val) {
+    options.headers[key] = val;
+  }
+
+  static RealResponseData catchError(ResponseData response) {
+    if (response.status != 1) {
+      Utils.toast(response.info);
+      // 未登录
+      if (response.status == -1) {
+        AppStorage.remove('token');
+        navigator.Get.toNamed(RouteConfig.login_page);
+      }
+      EasyLoading.dismiss();
+      return RealResponseData(result: false, data: null);
+    } else {
+      return RealResponseData(result: true, data: response.data, more: response.more);
     }
   }
 }
