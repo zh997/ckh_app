@@ -14,7 +14,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.6.1"
+    version: "2.5.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -153,27 +153,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
-  flutter_baidu_mapapi_base:
-    dependency: transitive
-    description:
-      name: flutter_baidu_mapapi_base
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.1"
-  flutter_baidu_mapapi_map:
-    dependency: "direct main"
-    description:
-      name: flutter_baidu_mapapi_map
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.1"
-  flutter_baidu_mapapi_search:
-    dependency: "direct main"
-    description:
-      name: flutter_baidu_mapapi_search
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.1"
   flutter_blurhash:
     dependency: transitive
     description:
@@ -216,13 +195,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.1"
-  flutter_plugin_android_lifecycle:
-    dependency: transitive
-    description:
-      name: flutter_plugin_android_lifecycle
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.11"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -503,7 +475,7 @@ packages:
       name: source_span
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.0"
   sqflite:
     dependency: transitive
     description:
@@ -559,7 +531,7 @@ packages:
       name: test_api
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.0"
+    version: "0.2.19"
   transformer_page_view:
     dependency: transitive
     description:

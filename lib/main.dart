@@ -5,17 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ckh_app/common/routes.dart';
 import 'package:ckh_app/middleware/app_middleware.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart';
 
 import 'common/storage.dart';
 void main() {
-//   if(Platform.isIOS){
-//     BMFMapSDK.setApiKeyAndCoordType(
-//         'c2QnQTSKYmEISdMy06G7WhVnlFe7B9hv', BMF_COORD_TYPE.BD09LL);
-//   }else if(Platform.isAndroid){
-// // Android 目前不支持接口设置Apikey,
-// // 请在主工程的Manifest文件里设置，详细配置方法请参考[https://lbsyun.baidu.com/ 官网][https://lbsyun.baidu.com/)demo
-//     BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);}
   runApp(MyApp());
 }
 

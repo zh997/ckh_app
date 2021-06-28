@@ -1,13 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ckh_app">
    <application
-        android:name=".MyAplication"
         android:label="创客汇"
         android:icon="@mipmap/ic_launcher">
-       <meta-data
-           android:name="com.baidu.lbsapi.API_KEY"
-           android:value="0wln1lcq3LEKScR6gpmjt4cDtEusws1v"
-           />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -157,7 +157,7 @@ class HomePage extends StatelessWidget {
               })
           ),
           itemBuilder: (BuildContext context,int index) => Image.network(
-              sliderList[index].url, fit: BoxFit.cover
+              sliderList[index].cover, fit: BoxFit.cover
           )
       ) : SizedBox(),
     );

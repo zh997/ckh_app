@@ -19,6 +19,10 @@ class HumenResourcePage extends StatefulWidget {
 class _HumenResourcePageState extends State<HumenResourcePage> {
   final HumenResourceLogic logic = Get.put(HumenResourceLogic());
   final HumenResourceState state = Get.find<HumenResourceLogic>().state;
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _want_jobController = TextEditingController();
   final TextEditingController _sexController = TextEditingController();
 
   @override
@@ -46,7 +50,7 @@ class _HumenResourcePageState extends State<HumenResourcePage> {
                   RowTextField(
                     key: GlobalKey(),
                     name: 'account',
-                    controller: TextEditingController(),
+                    controller: _usernameController,
                     title: '您的姓名：',
                     labelText: '请输入',
                     labelBottom: 10,
@@ -78,7 +82,7 @@ class _HumenResourcePageState extends State<HumenResourcePage> {
                   RowTextField(
                     key: GlobalKey(),
                     name: 'account',
-                    controller: TextEditingController(),
+                    controller: _emailController,
                     title: '您的电子邮箱： ',
                     labelText: '请输入',
                     labelBottom: 10,
@@ -89,7 +93,7 @@ class _HumenResourcePageState extends State<HumenResourcePage> {
                   RowTextField(
                     key: GlobalKey(),
                     name: 'account',
-                    controller: TextEditingController(),
+                    controller: _mobileController,
                     title: '您的电话号码： ',
                     labelText: '请输入',
                     labelBottom: 10,
@@ -100,7 +104,7 @@ class _HumenResourcePageState extends State<HumenResourcePage> {
                   RowTextField(
                     key: GlobalKey(),
                     name: 'account',
-                    controller: TextEditingController(),
+                    controller: _want_jobController,
                     title: '职业意向：',
                     labelText: '请输入',
                     labelBottom: 10,
@@ -115,7 +119,15 @@ class _HumenResourcePageState extends State<HumenResourcePage> {
             SizedBox(height: 30,),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: PrimaryButton('提交', radius: ScreenUtil().setWidth(98),),
+              child: PrimaryButton('提交', radius: ScreenUtil().setWidth(98), onTap: (){
+                final Map<String, dynamic> data = {};
+                data['username'] = _usernameController.text;
+                data['sex'] = _sexController.text;
+                data['email'] = _emailController.text;
+                data['mobile'] = _mobileController.text;
+                data['want_job'] = _want_jobController.text;
+                logic.onSendMsg(data);
+              },),
             )
           ],
         )

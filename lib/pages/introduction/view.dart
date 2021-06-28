@@ -165,7 +165,7 @@ class IntroductionPage extends StatelessWidget {
                 );
               })
           ),
-          itemBuilder: (BuildContext context,int index) => Image.asset(
+          itemBuilder: (BuildContext context,int index) => Image.network(
               imgArr[index], fit: BoxFit.cover
           )
       ) : SizedBox(),
