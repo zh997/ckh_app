@@ -1,26 +1,8 @@
 PODS:
-  - BaiduMapKit/Base (6.2.0)
-  - BaiduMapKit/Map (6.2.0):
-    - BaiduMapKit/Base
-  - BaiduMapKit/Search (6.2.0):
-    - BaiduMapKit/Base
-  - BaiduMapKit/Utils (6.2.0):
-    - BaiduMapKit/Base
   - connectivity (0.0.1):
     - Flutter
     - Reachability
   - Flutter (1.0.0)
-  - flutter_baidu_mapapi_base (2.0.0):
-    - BaiduMapKit/Utils (= 6.2.0)
-    - Flutter
-  - flutter_baidu_mapapi_map (2.0.0):
-    - BaiduMapKit/Map (= 6.2.0)
-    - Flutter
-    - flutter_baidu_mapapi_base
-  - flutter_baidu_mapapi_search (0.0.1):
-    - BaiduMapKit/Search (= 6.2.0)
-    - Flutter
-    - flutter_baidu_mapapi_base
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
@@ -48,9 +30,6 @@ PODS:
 DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `Flutter`)
-  - flutter_baidu_mapapi_base (from `.symlinks/plugins/flutter_baidu_mapapi_base/ios`)
-  - flutter_baidu_mapapi_map (from `.symlinks/plugins/flutter_baidu_mapapi_map/ios`)
-  - flutter_baidu_mapapi_search (from `.symlinks/plugins/flutter_baidu_mapapi_search/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
@@ -62,7 +41,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - BaiduMapKit
     - FMDB
     - Reachability
     - Toast
@@ -72,12 +50,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/connectivity/ios"
   Flutter:
     :path: Flutter
-  flutter_baidu_mapapi_base:
-    :path: ".symlinks/plugins/flutter_baidu_mapapi_base/ios"
-  flutter_baidu_mapapi_map:
-    :path: ".symlinks/plugins/flutter_baidu_mapapi_map/ios"
-  flutter_baidu_mapapi_search:
-    :path: ".symlinks/plugins/flutter_baidu_mapapi_search/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   image_gallery_saver:
@@ -96,12 +68,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
-  BaiduMapKit: 907c6d9b74f66c3ff4741fc4b568ae0b339917f8
   connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  flutter_baidu_mapapi_base: 90fddba11ec4435406a7211d6ee905b4311c31db
-  flutter_baidu_mapapi_map: 771bf00671832b1fcddb17733518cd631529df16
-  flutter_baidu_mapapi_search: 4cffaa74e739a4114595c4f82f790e1783bb612d
   fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
