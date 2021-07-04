@@ -2,8 +2,11 @@ import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:ckh_app/constant/app_images.dart';
 import 'package:ckh_app/models/news_active_info.dart';
+import 'package:ckh_app/models/project_case.dart';
+import 'package:ckh_app/models/project_case_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screen_util.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:get/get.dart';
 
@@ -31,10 +34,11 @@ class ProjectCaseDetailPage extends StatelessWidget {
             centerTitle: true,
           ),
           body: Obx((){
-            final NewsLatestDeventsInfoModel activeInfo = state.activeInfo.value;
+            final ProjectCaseDetailModel activeInfo = state.activeInfo.value;
             return ListView(
               padding: EdgeInsets.only(),
               children: [
+                activeInfo.imgArr.length > 0 ? _Swiper(activeInfo.imgArr): SizedBox(),
                 SizedBox(height: 10,),
                 Container(
                   color: Colors.white,
@@ -103,5 +107,47 @@ class ProjectCaseDetailPage extends StatelessWidget {
         height: 30,
       ));
     });
+  }
+
+  Widget _Swiper(List<String> imgArr) {
+    return Container(
+      width: ScreenUtil().setWidth(690),
+      height: ScreenUtil().setWidth(388),
+      child:imgArr != null ?  Swiper(
+          key: UniqueKey(),
+          duration: 1000,
+          itemCount: imgArr.length,
+          autoplay: true,
+          pagination: SwiperPagination(
+              builder: SwiperCustomPagination(builder: (BuildContext context, SwiperPluginConfig swiperPluginConfig) {
+                double opacity (int index) {
+                  if ( swiperPluginConfig.activeIndex == index) {
+                    return 1.0;
+                  } else {
+                    return 0.3;
+                  }
+                }
+                return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(imgArr.length, (index) => Opacity(
+                        opacity: opacity(index),
+                        child: Container(
+                          margin: EdgeInsets.only(left: 2, right: 2),
+                          width: ScreenUtil().setWidth(15),
+                          height: ScreenUtil().setWidth(15),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(ScreenUtil().setWidth(15)),
+                              color: swiperPluginConfig.activeIndex == index ? AppColors.COLOR_31C27A :Colors.white
+                          ),
+                        )),
+                    )
+                );
+              })
+          ),
+          itemBuilder: (BuildContext context,int index) => Image.network(
+              imgArr[index], fit: BoxFit.cover
+          )
+      ) : SizedBox(),
+    );
   }
 }

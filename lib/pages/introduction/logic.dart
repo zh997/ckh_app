@@ -8,7 +8,7 @@ class IntroductionLogic extends GetxController {
   final state = IntroductionState();
   String id = Get.parameters['id'];
 
-  Future onInitData() async {
+  Future onInitData(String id) async {
     if (id != null) {
       RealResponseData response = await AppService.settledCompanyInfo(id);
       if (response.result) {

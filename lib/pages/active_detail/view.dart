@@ -48,16 +48,18 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
             centerTitle: true,
           ),
           body: Obx((){
-            final NewDetailModel activeInfo = state.activeInfo.value;
-            print(activeInfo.imgArr);
+            final NewDetailModel newsInfo = state.newsInfo.value;
+            final NewsLatestDeventsInfoModel activeInfo = state.activeInfo.value;
+            dynamic info;
+            if (int.parse(type) == 2) {
+              info = newsInfo;
+            } else {
+              info = activeInfo;
+            }
             return ListView(
               padding: EdgeInsets.only(),
               children: [
-                _Swiper(activeInfo.imgArr),
-                // Container(
-                //   height: ScreenUtil().setWidth(400),
-                //   child: Image.network(activeInfo.cover, fit: BoxFit.fitWidth),
-                // ),
+                info.imgArr.length > 0 ? _Swiper(info.imgArr): SizedBox(),
                 SizedBox(height: 10,),
                 Container(
                   color: Colors.white,
@@ -65,19 +67,19 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(activeInfo.title, style:  TextStyle(color: AppColors.COLOR_2C3340, fontWeight: FontWeight.bold, fontSize: AppFont.SIZE_32),strutStyle: StrutStyle(
+                      Text(info.title, style:  TextStyle(color: AppColors.COLOR_2C3340, fontWeight: FontWeight.bold, fontSize: AppFont.SIZE_32),strutStyle: StrutStyle(
                         fontFamily: 'Roboto',
                         height: 1.2,
                         leading: 0.5,
                       )),
                       SizedBox(height: 10,),
-                      Text(activeInfo.abstract, style:  TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),strutStyle: StrutStyle(
+                      Text(info.abstract, style:  TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),strutStyle: StrutStyle(
                         fontFamily: 'Roboto',
                         height: 1.2,
                         leading: 0.5,
                       )),
                       SizedBox(height: 10,),
-                      HtmlWidget(activeInfo.content, textStyle: TextStyle(
+                      HtmlWidget(info.content, textStyle: TextStyle(
                         color: AppColors.COLOR_2C3340,
                         fontSize: AppFont.SIZE_28,
                         fontFamily: 'Roboto',
@@ -108,9 +110,6 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                           Image.asset(AppImages.CHROME_ICON, width: ScreenUtil().setWidth(70), height: ScreenUtil().setWidth(70),),
                           GestureDetector(
                             behavior: HitTestBehavior.opaque,
-                            onTap: (){
-
-                            },
                             child: Image.asset(AppImages.QQ_ICON, width: ScreenUtil().setWidth(60), height: ScreenUtil().setWidth(60),),
                           ),
                           Image.asset(AppImages.QUNE_ICON, width: ScreenUtil().setWidth(70), height: ScreenUtil().setWidth(70),),

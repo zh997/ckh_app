@@ -5,6 +5,7 @@ import 'package:ckh_app/http/http_request.dart';
 import 'package:ckh_app/http/response_data.dart';
 import 'package:ckh_app/models/company_list.dart';
 import 'package:ckh_app/models/home_index.dart';
+import 'package:ckh_app/models/project_case_detail.dart';
 import 'package:ckh_app/models/setteld_company_list.dart';
 import 'package:ckh_app/models/honner_list.dart';
 import 'package:ckh_app/models/news_latest_dvents.dart';
@@ -13,6 +14,7 @@ import 'package:ckh_app/models/partner_list.dart';
 import 'package:ckh_app/models/concat_us.dart';
 import 'package:ckh_app/models/goods_list.dart';
 import 'package:ckh_app/models/news_detail.dart';
+import 'package:ckh_app/models/project_case.dart';
 
 class AppService {
    // 首页数据
@@ -68,7 +70,7 @@ class AppService {
    static Future<RealResponseData> news() async {
      DioResponseData response = await HttpRequest.request(AppApiUrls.new_lists, null , 'POST');
      if (response.result && response.data != null) {
-       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: NewsLatestDeventsInfoModelFromJson));
+       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: NewDetailModelFromJson));
      }
    }
    // 新闻资讯详情
@@ -82,14 +84,14 @@ class AppService {
    static Future<RealResponseData> projectLists() async {
      DioResponseData response = await HttpRequest.request(AppApiUrls.project_lists, null, 'POST');
      if (response.result && response.data != null) {
-       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: NewsLatestDeventsInfoModelFromJson));
+       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: ProjectCaseModelFromJson));
      }
    }
    //案例详情
    static Future<RealResponseData> projectListsInfo(String id) async {
      DioResponseData response = await HttpRequest.request(AppApiUrls.project_info,{'id': id}, 'POST');
      if (response.result && response.data != null) {
-       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: NewsLatestDeventsInfoModelFromJson));
+       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: ProjectCaseDetailModelFromJson));
      }
    }
    //合作伙伴

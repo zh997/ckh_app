@@ -18,7 +18,7 @@ class ResponseData<T>{
 
   ResponseData.fromJson(Map<String, dynamic> json, { fromJson,bool noList }) {
     // print('----------------------');
-    // print(json);
+    //  print(json['data']['img_arr']);
     // print('----------------------');
     info = json['info'];
     if (fromJson != null && json['status'] == 1) {

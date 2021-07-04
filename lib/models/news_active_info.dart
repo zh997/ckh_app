@@ -10,6 +10,7 @@ class NewsLatestDeventsInfoModel {
   String updateTime;
   int sort;
   int status;
+  List<String> imgArr;
 
   NewsLatestDeventsInfoModel(
       {this.id,
@@ -20,7 +21,9 @@ class NewsLatestDeventsInfoModel {
         this.content,
         this.updateTime,
         this.sort,
-        this.status});
+        this.status,
+        this.imgArr
+      });
 
   NewsLatestDeventsInfoModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -32,6 +35,7 @@ class NewsLatestDeventsInfoModel {
     updateTime = json['update_time'];
     sort = json['sort'];
     status = json['status'];
+    imgArr = json['img_arr'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {
@@ -45,6 +49,7 @@ class NewsLatestDeventsInfoModel {
     data['update_time'] = this.updateTime;
     data['sort'] = this.sort;
     data['status'] = this.status;
+    data['img_arr'] = this.imgArr;
     return data;
   }
 }

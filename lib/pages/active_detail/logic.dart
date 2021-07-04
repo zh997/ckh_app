@@ -10,7 +10,7 @@ class ActiveDetailLogic extends GetxController {
   String type = Get.parameters['type'];
 
   Future onInitData() async {
-    print(type);
+
     if (int.parse(type) == 1) {
       RealResponseData response = await AppService.newsLatestDventsDetail(id);
       if (response.result) {
@@ -20,7 +20,7 @@ class ActiveDetailLogic extends GetxController {
     if (int.parse(type) == 2) {
       RealResponseData response = await AppService.newsInfo(id);
       if (response.result) {
-        state.activeInfo.value = response.data;
+        state.newsInfo.value = response.data;
       }
     }
   }

@@ -43,7 +43,7 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
               },
               child: Icon(Icons.arrow_back_ios_rounded, size: 25, color: AppColors.COLOR_232933,)
           ),backgroundColor: Colors.white,elevation: 0,
-            title: Text('公司介绍', style: TextStyle(color: AppColors.COLOR_232933, fontSize: AppFont.SIZE_36)),
+            title: Text('联系我们', style: TextStyle(color: AppColors.COLOR_232933, fontSize: AppFont.SIZE_36)),
             centerTitle: true,
           ),
           body: Obx((){

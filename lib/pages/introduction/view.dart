@@ -18,7 +18,8 @@ class IntroductionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(future: logic.onInitData(), builder: (BuildContext context, AsyncSnapshot snapshot){
+    print(id);
+    return FutureBuilder(future: logic.onInitData(id), builder: (BuildContext context, AsyncSnapshot snapshot){
       if (snapshot.connectionState == ConnectionState.done) {
         return Scaffold(
             backgroundColor: AppColors.COLOR_F5F6FA,
@@ -55,17 +56,19 @@ class IntroductionPage extends StatelessWidget {
                                 height: 1.5,
                             )),
                             SizedBox(height: 20,),
+                            _Swiper(compnayList.imgArr),
+                            SizedBox(height: 20,),
                             HtmlWidget(compnayList.contentTwo,textStyle: TextStyle(
                               color: AppColors.COLOR_2C3340,
                               fontSize: AppFont.SIZE_28,
                               fontFamily: 'Roboto',
                               height: 1.5,
                             )),
-                            SizedBox(height: 20,),
+
                             // Container(
                             //   child: Image.asset(AppImages.COMPANY_IMG_1, width: ScreenUtil().setWidth(690), height: ScreenUtil().setWidth(388)),
                             // ),
-                            _Swiper(compnayList.imgArr),
+
                           ],
                         ),
                       ),

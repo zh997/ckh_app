@@ -7,7 +7,7 @@ import 'state.dart';
 class BaseShowLogic extends GetxController {
   final state = BaseShowState();
   Future onInitData() async {
-    RealResponseData response = await AppService.honnerList();
+    RealResponseData response = await AppService.baseDisplaysList();
     if (response.result) {
       state.baseList.value = response.data;
     }
