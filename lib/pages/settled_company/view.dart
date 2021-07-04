@@ -1,3 +1,4 @@
+import 'package:ckh_app/common/routes.dart';
 import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:flutter/material.dart';
@@ -32,13 +33,18 @@ class SettledCompanyPage extends StatelessWidget {
                 slivers: [
                   SliverToBoxAdapter(child: SizedBox(height: 10,),),
                   SliverList(delegate: SliverChildBuilderDelegate((BuildContext context, int index){
-                    return Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border(bottom: BorderSide(color: AppColors.COLOR_GRAY_EEEEEE, width: 1))
+                    return InkWell(
+                      onTap: () {
+                        Get.toNamed(RouteConfig.introduction_page + '?id=${honorList[index].id}');
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border(bottom: BorderSide(color: AppColors.COLOR_GRAY_EEEEEE, width: 1))
+                        ),
+                        child: Text(honorList[index].title, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),),
                       ),
-                      child: Text(honorList[index].title, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),),
                     );
                   }, childCount: honorList.length)),
                   SliverToBoxAdapter(child: SizedBox(height: 10,),),

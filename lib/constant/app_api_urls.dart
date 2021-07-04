@@ -16,4 +16,5 @@ class AppApiUrls  {
   static String send_message = '/main/Message/send_message';
   static String contract_us = '/main/Message/contract_us';
   static String goods_list = '/main/Goods/index';
+  static String settled_company_info = '/main/index/settled_company_info';
 }

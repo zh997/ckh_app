@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             onInit: AppMiddleWare.onInit,
             onReady: AppMiddleWare.onReady(),
             routingCallback: AppMiddleWare.RoutingCallback,
-            defaultTransition: Transition.cupertino,
+            defaultTransition: Transition.noTransition,
             getPages: RouteConfig.getPages,
           ),
         );

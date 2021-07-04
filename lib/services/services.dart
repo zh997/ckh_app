@@ -12,6 +12,7 @@ import 'package:ckh_app/models/news_active_info.dart';
 import 'package:ckh_app/models/partner_list.dart';
 import 'package:ckh_app/models/concat_us.dart';
 import 'package:ckh_app/models/goods_list.dart';
+import 'package:ckh_app/models/news_detail.dart';
 
 class AppService {
    // 首页数据
@@ -74,7 +75,7 @@ class AppService {
    static Future<RealResponseData> newsInfo(String id) async {
      DioResponseData response = await HttpRequest.request(AppApiUrls.news_info, {'id': id} , 'POST');
      if (response.result && response.data != null) {
-       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: NewsLatestDeventsInfoModelFromJson));
+       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: NewDetailModelFromJson));
      }
    }
    // 项目案例
@@ -117,6 +118,13 @@ class AppService {
      DioResponseData response = await HttpRequest.request(AppApiUrls.goods_list, null , 'POST');
      if (response.result && response.data != null) {
        return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: GoodsListModelFromJson));
+     }
+   }
+   // 入驻企业详情
+   static Future<RealResponseData> settledCompanyInfo(String id) async {
+     DioResponseData response = await HttpRequest.request(AppApiUrls.settled_company_info, {'id': id} , 'POST');
+     if (response.result && response.data != null) {
+       return HttpRequest.catchError(ResponseData.fromJson(jsonDecode(response.data), fromJson: CompanyListModelFromJson));
      }
    }
 }

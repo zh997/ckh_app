@@ -14,6 +14,7 @@ import 'state.dart';
 class IntroductionPage extends StatelessWidget {
   final IntroductionLogic logic = Get.put(IntroductionLogic());
   final IntroductionState state = Get.find<IntroductionLogic>().state;
+  String id = Get.parameters['id'];
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +73,7 @@ class IntroductionPage extends StatelessWidget {
                     ],
                   );
                 })),
-                Container(
+                id == null ? Container(
                   color: Colors.white,
                   alignment: Alignment.center,
                   padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom + 15, left: 15,right: 15, top: 15),
@@ -117,7 +118,7 @@ class IntroductionPage extends StatelessWidget {
                       )),
                     ],
                   ),
-                )
+                ) : SizedBox()
               ],
             )
         );

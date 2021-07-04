@@ -62,4 +62,5 @@ class AppImages {
   static String QQ_ICON = 'static/images/qq_icon.png';
   static String QUNE_ICON = 'static/images/qune_icon.png';
 
+  static String MAP_IMG = 'static/images/map_img.jpg';
 }

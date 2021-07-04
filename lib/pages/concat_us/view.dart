@@ -131,10 +131,15 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                               SizedBox(height: 5,),
                               Text(concatUs.addres, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28)),
                             ],
-                          )
+                          ),
+
                         ],
                       ),
                       SizedBox(height: 15,),
+                      Container(
+                        alignment: Alignment.center,
+                        child:  Image.asset(AppImages.MAP_IMG, fit: BoxFit.fill,),
+                      )
                     ],
                   ),
                 ),
