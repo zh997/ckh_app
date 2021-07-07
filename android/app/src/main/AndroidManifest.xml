@@ -2,6 +2,7 @@
     package="com.example.ckh_app">
    <application
         android:label="创客汇"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

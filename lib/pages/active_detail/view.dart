@@ -1,3 +1,4 @@
+import 'package:ckh_app/constant/app_api_urls.dart';
 import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:ckh_app/constant/app_images.dart';
@@ -72,12 +73,12 @@ class _ActiveDetailPageState extends State<ActiveDetailPage> {
                         height: 1.2,
                         leading: 0.5,
                       )),
-                      SizedBox(height: 10,),
-                      Text(info.abstract, style:  TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),strutStyle: StrutStyle(
-                        fontFamily: 'Roboto',
-                        height: 1.2,
-                        leading: 0.5,
-                      )),
+                      // SizedBox(height: 10,),
+                      // Text(info.abstract, style:  TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28),strutStyle: StrutStyle(
+                      //   fontFamily: 'Roboto',
+                      //   height: 1.2,
+                      //   leading: 0.5,
+                      // )),
                       SizedBox(height: 10,),
                       HtmlWidget(info.content, textStyle: TextStyle(
                         color: AppColors.COLOR_2C3340,
