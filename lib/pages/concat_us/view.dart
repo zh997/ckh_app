@@ -2,6 +2,7 @@ import 'package:ckh_app/constant/app_colors.dart';
 import 'package:ckh_app/constant/app_fontsize.dart';
 import 'package:ckh_app/constant/app_images.dart';
 import 'package:ckh_app/models/concat_us.dart';
+import 'package:ckh_app/common/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
@@ -111,30 +112,50 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                         ],
                       ),
                       SizedBox(height: 15,),
-                      Row(
-                        children: [
-                          Container(
-                            width: ScreenUtil().setWidth(116),
-                            height: ScreenUtil().setWidth(116),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular( ScreenUtil().setWidth(116)),
-                                border: Border.all(color: AppColors.COLOR_C8CFE0)
-                            ),
-                            child: Image.asset(AppImages.CONCAT_US_ADDRESS, fit: BoxFit.fitWidth, width: ScreenUtil().setWidth(60),height: ScreenUtil().setWidth(60)),
-                          ),
-                          SizedBox(width: 10,),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                      InkWell(
+                        onTap: (){
+                          showAdaptiveActionSheet(
+                            context: context,
+                            actions: <BottomSheetAction>[
+                              BottomSheetAction(title: const Text('高德地图'), onPressed: () {
+                                MapUtil.gotoAMap(item.longitude, item.latitude);
+                              }),
+                              BottomSheetAction(title: const Text('腾讯地图'), onPressed: () {
+                                MapUtil.gotoTencentMap(item.longitude, item.latitude);
+                              }),
+                              BottomSheetAction(title: const Text('百度地图'), onPressed: () {
+                                MapUtil.gotoBaiduMap(item.longitude, item.latitude);
+                              }),
+                            ],
+                            cancelAction: CancelAction(title: const Text('关闭')),// onPressed parameter is optional by default will dismiss the ActionSheet
+                          );
+                        },
+                        child: Row(
                             children: [
-                              Text('地址', style: TextStyle(color: AppColors.COLOR_646D7F, fontSize: AppFont.SIZE_28)),
-                              SizedBox(height: 5,),
-                              Text(concatUs.addres, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28)),
+                              Container(
+                                width: ScreenUtil().setWidth(116),
+                                height: ScreenUtil().setWidth(116),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular( ScreenUtil().setWidth(116)),
+                                    border: Border.all(color: AppColors.COLOR_C8CFE0)
+                                ),
+                                child: Image.asset(AppImages.CONCAT_US_ADDRESS, fit: BoxFit.fitWidth, width: ScreenUtil().setWidth(60),height: ScreenUtil().setWidth(60)),
+                              ),
+                              SizedBox(width: 10,),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('地址', style: TextStyle(color: AppColors.COLOR_646D7F, fontSize: AppFont.SIZE_28)),
+                                  SizedBox(height: 5,),
+                                  Text(concatUs.addres, style: TextStyle(color: AppColors.COLOR_2C3340, fontSize: AppFont.SIZE_28)),
+                                ],
+                              ),
+
                             ],
                           ),
-
-                        ],
                       ),
+                      
                       SizedBox(height: 15,),
                       Container(
                         alignment: Alignment.center,
