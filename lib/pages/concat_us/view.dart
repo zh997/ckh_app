@@ -6,6 +6,7 @@ import 'package:ckh_app/common/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:get/get.dart';
 
 import 'logic.dart';
@@ -118,13 +119,13 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                             context: context,
                             actions: <BottomSheetAction>[
                               BottomSheetAction(title: const Text('高德地图'), onPressed: () {
-                                MapUtil.gotoAMap(item.longitude, item.latitude);
+                                MapUtil.gotoAMap(114.11362500895368, 22.601491110951258);
                               }),
                               BottomSheetAction(title: const Text('腾讯地图'), onPressed: () {
-                                MapUtil.gotoTencentMap(item.longitude, item.latitude);
+                                MapUtil.gotoTencentMap(114.11362500895368, 22.601491110951258);
                               }),
                               BottomSheetAction(title: const Text('百度地图'), onPressed: () {
-                                MapUtil.gotoBaiduMap(item.longitude, item.latitude);
+                                MapUtil.gotoBaiduMap(114.11362500895368, 22.601491110951258);
                               }),
                             ],
                             cancelAction: CancelAction(title: const Text('关闭')),// onPressed parameter is optional by default will dismiss the ActionSheet
@@ -157,10 +158,30 @@ class _ConcatUsPageState extends State<ConcatUsPage> {
                       ),
                       
                       SizedBox(height: 15,),
-                      Container(
-                        alignment: Alignment.center,
-                        child:  Image.asset(AppImages.MAP_IMG, fit: BoxFit.fill,),
+                      InkWell(
+                        onTap: (){
+                          showAdaptiveActionSheet(
+                            context: context,
+                            actions: <BottomSheetAction>[
+                              BottomSheetAction(title: const Text('高德地图'), onPressed: () {
+                                // MapUtil.gotoAMap(item.longitude, item.latitude);
+                              }),
+                              BottomSheetAction(title: const Text('腾讯地图'), onPressed: () {
+                                // MapUtil.gotoTencentMap(item.longitude, item.latitude);
+                              }),
+                              BottomSheetAction(title: const Text('百度地图'), onPressed: () {
+                                // MapUtil.gotoBaiduMap(item.longitude, item.latitude);
+                              }),
+                            ],
+                            cancelAction: CancelAction(title: const Text('关闭')),// onPressed parameter is optional by default will dismiss the ActionSheet
+                          );
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          child:  Image.asset(AppImages.MAP_IMG, fit: BoxFit.fill,),
+                        )
                       )
+                      
                     ],
                   ),
                 ),

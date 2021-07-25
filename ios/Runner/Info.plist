@@ -25,6 +25,9 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>snssdk1128</string>
+		<string>iosamap</string>
+		<string>qqmap</string>
+		<string>baidumap</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
